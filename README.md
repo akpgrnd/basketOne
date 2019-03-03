@@ -8,7 +8,7 @@ Basket test API
 # How to run
 - Run from VisualStudio using IIS Express
 - Set Checkout.Basket.API as a startup project
-- To demo automatically set multiple startup projects. Add Checkout.Demo project to startup
+- To run demo automatically add Checkout.Demo project to startup (i.e. use option to set two startup projects).
 
 # What API is capable of
 - Show basket
@@ -20,7 +20,8 @@ Basket test API
 - Store Data in memory only
 
 # Security
-- This is a prototype, it only relies on http header X-Token to identify current user basket. Client application is expected to handle token securely.
+- This is a prototype, it only relies on http header X-Token to identify current user basket. Client application is expected to handle token securely. The header is validated and set in Middleware
+- Additional security check is added to API controller via ActionFilter
 - Services Checkout.Basket.API and Checkout.Basket.TokenService can be improved for additional security 
 
 
