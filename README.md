@@ -2,12 +2,13 @@
 Basket test API
 
 # Technology stack
-Solution is written .Net Core 2.2 
-Visual Studio 2017
+- Solution is written .Net Core 2.2 
+- Visual Studio 2017
 
 # How to run
-Set Checkout.Basket.API as startup project
-To demo automatically set multiple startup projects. Add Checkout.Demo project to startup
+- Run from VisualStudio using IIS Express
+- Set Checkout.Basket.API as a startup project
+- To demo automatically set multiple startup projects. Add Checkout.Demo project to startup
 
 # What API is capable of
 - Show basket
@@ -19,9 +20,8 @@ To demo automatically set multiple startup projects. Add Checkout.Demo project t
 - Store Data in memory only
 
 # Security
-This is a prototype, it only relies on http header X-Token to identify current user basket. Client application is expected to handle token securely.
-
-Services Checkout.Basket.API and Checkout.Basket.TokenService can be improved for additional security 
+- This is a prototype, it only relies on http header X-Token to identify current user basket. Client application is expected to handle token securely.
+- Services Checkout.Basket.API and Checkout.Basket.TokenService can be improved for additional security 
 
 
 # Biggest shortcomings due to time constraints
