@@ -1,6 +1,15 @@
 # basketOne
 Basket test API
 
+# What API is capable of
+- Show basket
+- Add items to basket
+- Change quantity of items in basket
+- Remove items from basket
+- Clear whole basket
+- Ringfence inventory added to user baskets (incomplete prototype functionality only)
+- Data is only stored in memory. Initially database only contains 6 products
+
 # Technology stack
 - Solution is written .Net Core 2.2 
 - Visual Studio 2017
@@ -10,15 +19,23 @@ Basket test API
 - Set Checkout.Basket.API as a startup project
 - To run demo automatically add Checkout.Demo project to startup (i.e. use option to set two startup projects).
 
-# What API is capable of
-- Show basket
-- Add items to basket
-- Remove items from basket
-- Clear items in basket
-- Clear whole basket
-- Ringfence inventory added to user baskets (incomplete prototype functionality only)
-- Store Data in memory only
+# Calling the API
 
+-  Show basket  
+  *GET /basket*
+- Add items to basket  
+  *POST /basket/{productId}*  
+  *Message body must contain quantity of items to add*
+- Change quantity of items in basket  
+  *PUT /basket/{productId}*  
+  *Message body must contain quantity of items to add*
+- Remove items from basket  
+  *DELETE /basket/{productId}*
+- Clear whole basket  
+  *DELETE /basket*
+  
+To work with an existing basket, API requests must pass basket ID with header *X-Token*. Otherwise a new basket will be created.
+  
 # Security
 - This is a prototype, it only relies on http header X-Token to identify current user basket. Client application is expected to handle token securely. The header is validated and set in Middleware
 - Additional security check is added to API controller via ActionFilter
